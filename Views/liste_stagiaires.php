@@ -14,6 +14,7 @@ ob_start();
             <th>Prenom</th>
             <th>Age</th>
             <th>Login</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +25,9 @@ ob_start();
                 <td><?=$stagiaire->prenom?></td>
                 <td><?=$stagiaire->age?></td>
                 <td><?=$stagiaire->login?></td>
+                <td>
+                    <a href="delete.php?id=<?php echo $stagiaire->id?> " class="btn btn-danger btn-sm">Supprimer</a>
+                </td>
             </tr>
             <?php endforeach; ?>
     </tbody>
