@@ -37,13 +37,8 @@ function edit($id, $nom, $prenom, $age, $login, $password){
 }
 function destroy($id){
     $pdo=database_connection();
-    $nom=$_POST['nom'];
-    $prenom=$_POST['prenom'];
-    $age=$_POST['age'];
-    $login=$_POST['login'];
-    $password=$_POST['password'];
     $sqlState = $pdo->prepare("DELETE FROM stagiaire WHERE id=? ");
-    return $sqlState->execute([$nom, $prenom, $age, $login, $password]); 
+    return $sqlState->execute([$id]); 
 
 
 }

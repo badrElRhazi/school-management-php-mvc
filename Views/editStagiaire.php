@@ -4,7 +4,7 @@ $title="Modifier  stagiaire";
 ob_start();  
 var_dump($stagiaire);
 ?>
-    <form action="update.php" method="post">
+    <form action="index.php?action=update" method="post">
         
         <input type="hidden" class="form-control is-valid" name="id" id="id" value="<?= $stagiaire->id?>">
         <label for="nom">Nom</label>

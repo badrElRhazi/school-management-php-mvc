@@ -5,7 +5,7 @@ ob_start();
         
 ?>
 
-<a href="create.php" class="btn btn-primary">Ajouter</a>
+<a href="index.php?action=create" class="btn btn-primary">Ajouter</a>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -26,8 +26,8 @@ ob_start();
                 <td><?=$stagiaire->age?></td>
                 <td><?=$stagiaire->login?></td>
                 <td>
-                <a href="edit.php?id=<?=$stagiaire->id?> " class="btn btn-primary btn-sm">Modifier</a>
-                    <a href="delete.php?id=<?php echo $stagiaire->id?> " class="btn btn-danger btn-sm">Supprimer</a>
+                <a href="index.php?action=edit&id=<?=$stagiaire->id?> " class="btn btn-primary btn-sm">Modifier</a>
+                    <a href="index.php?action=delete&id=<?= $stagiaire->id?> " class="btn btn-danger btn-sm">Supprimer</a>
                 </td>
             </tr>
             <?php endforeach; ?>

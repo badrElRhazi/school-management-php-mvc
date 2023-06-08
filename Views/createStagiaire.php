@@ -4,7 +4,7 @@ $title="Ajouter  stagiaire";
 ob_start();
         
 ?>
-    <form action="store.php" method="post">
+    <form action="index.php?action=store" method="post">
         <label for="nom">Nom</label>
         <input type="text" class="form-control is-valid" name="nom" id="nom">
         <label for="prenom">Prénom</label>

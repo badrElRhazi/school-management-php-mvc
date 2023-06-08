@@ -7,20 +7,21 @@ require_once 'model/stagiaire.php';
         require_once 'views/liste_stagiaires.php';
     }
     function createAction(){
-        require_once 'Views/createStagiaire.php';
+        require_once 'Views/createStagiaire.php?';
     }
     function storeAction(){
         $isCreated=create();
         if($isCreated){
             echo 'successfully';
-            header('location:index.php');
+            header('location:index.php?action=list');
     }else{
         echo(error_clear_last());
     }
         
     }
-    function editAction($id){
-        $stagiaire=view($id);
+    function editAction(){
+        // $stagiaire=view($id);
+        $id = $_GET['id'];
         require_once 'Views/editStagiaire.php';
     }
     function updateAction(){
@@ -33,17 +34,16 @@ require_once 'model/stagiaire.php';
         $login=$_POST['login'];
         $password=$_POST['password'];
         edit($id, $nom, $prenom, $age, $login, $password);
-        header('location:index.php');
+        header('location:index.php?action=list');
     }
    
     function deleteAction(){
-        $id=$_GET['id'];
         require_once 'Views/deleteStagiaire.php';
 
     }
     function destroyAction(){
         destroy($_GET['id']);
-        header('location:index.php');
+        header('location:index.php?action=list');
     }
 
 ?>
